@@ -20,8 +20,8 @@
   <script type="importmap">
   {
     "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.136.0/examples/jsm/"
+      "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
     }
   }
 </script>
@@ -73,11 +73,11 @@
     scene.add(sun);
 
     // Create ambient light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1 * Math.PI);
     scene.add(ambientLight);
 
     // Create a directional light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, Math.PI);
     directionalLight.position.set(5, 10, 5);
     directionalLight.castShadow = true;
     directionalLight.shadow.mapSize.width = 1024;
@@ -96,7 +96,7 @@
       const textGeometry = new TextGeometry('DEMO', {
         font: font,
         size: 1,
-        height: 0.2,
+        depth: 0.2,
         curveSegments: 12,
         bevelEnabled: true,
         bevelThickness: 0.03,
