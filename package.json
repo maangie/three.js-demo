@@ -1,0 +1,8 @@
+{
+  "name": "three.js-demo",
+  "private": true,
+  "description": "three.js のデモ。three は CDN から読み込む。この package.json は Dependabot に three の版を見せるためのもの",
+  "dependencies": {
+    "three": "0.186.1"
+  }
+}
